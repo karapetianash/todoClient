@@ -44,7 +44,7 @@ var listCmd = &cobra.Command{
 }
 
 func listAction(out io.Writer, apiRoot string) error {
-	items, err := getItems(apiRoot)
+	items, err := getAll(apiRoot)
 	if err != nil {
 		return err
 	}
@@ -53,7 +53,7 @@ func listAction(out io.Writer, apiRoot string) error {
 }
 
 func printAll(out io.Writer, items []item) error {
-	w := tabwriter.NewWriter(out, 3, 2, 0, ' ', 0)
+	w := tabwriter.NewWriter(out, 2, 2, 0, ' ', 0)
 
 	for k, v := range items {
 		done := "-"
