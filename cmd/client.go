@@ -151,3 +151,17 @@ func addItem(apiRoot, task string) error {
 
 	return sendRequest(u, http.MethodPost, "application/json", http.StatusCreated, &body)
 }
+
+// completeItem marks a item as completed
+func completeItem(apiRoot string, id int) error {
+	u := fmt.Sprintf("%s/todo/%d?complete", apiRoot, id)
+
+	return sendRequest(u, http.MethodPatch, "", http.StatusNoContent, nil)
+}
+
+// deleteItem deletes an item from the list
+func deleteItem(apiRoot string, id int) error {
+	u := fmt.Sprintf("%s/todo/%d", apiRoot, id)
+
+	return sendRequest(u, http.MethodDelete, "", http.StatusNoContent, nil)
+}
