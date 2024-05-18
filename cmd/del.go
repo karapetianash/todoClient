@@ -47,7 +47,7 @@ var delCmd = &cobra.Command{
 func delAction(out io.Writer, apiRoot, arg string) error {
 	id, err := strconv.Atoi(arg)
 	if err != nil {
-		return fmt.Errorf("%w: Item is must be a number", arg)
+		return fmt.Errorf("%w: Item is must be a number", ErrNotNumber)
 	}
 
 	if err = deleteItem(apiRoot, id); err != nil {
