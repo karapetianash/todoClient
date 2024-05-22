@@ -23,12 +23,12 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/viper"
 	"io"
 	"os"
 	"strings"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // addCmd represents the add command

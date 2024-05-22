@@ -23,12 +23,12 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/viper"
 	"io"
 	"os"
 	"strconv"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // delCmd represents the del command

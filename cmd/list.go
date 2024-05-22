@@ -23,12 +23,12 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/viper"
 	"io"
 	"os"
 	"text/tabwriter"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // listCmd represents the list command

@@ -60,11 +60,11 @@ func TestIntegration(t *testing.T) {
 		var out bytes.Buffer
 
 		if err := addAction(&out, apiRoot, args); err != nil {
-			t.Fatalf("Expected no error, got %q instead\n", err)
+			t.Fatalf("Expected no error, got %q.", err)
 		}
 
 		if expOut != out.String() {
-			t.Errorf("Expected output %q, got %q instead\n", expOut, out.String())
+			t.Errorf("Expected output %q, got %q", expOut, out.String())
 		}
 	})
 
@@ -72,7 +72,7 @@ func TestIntegration(t *testing.T) {
 		var out bytes.Buffer
 
 		if err := listAction(&out, apiRoot); err != nil {
-			t.Fatalf("Expected no error, got %q instead\n", err)
+			t.Fatalf("Expected no error, got %q.", err)
 		}
 
 		outList := ""
@@ -85,13 +85,13 @@ func TestIntegration(t *testing.T) {
 		}
 
 		if outList == "" {
-			t.Errorf("Task %q is not in the list\n", task)
+			t.Fatalf("Task %q is not in the list.", task)
 		}
 
 		taskCompleteStatus := strings.Fields(outList)[0]
 
 		if taskCompleteStatus != "-" {
-			t.Errorf("Expected status %q, got %q instead\n", "-", taskCompleteStatus)
+			t.Errorf("Expected status %q, got %q.", "-", taskCompleteStatus)
 		}
 
 		taskId = strings.Fields(outList)[1]
@@ -101,21 +101,21 @@ func TestIntegration(t *testing.T) {
 		var out bytes.Buffer
 
 		if err := viewAction(&out, apiRoot, taskId); err != nil {
-			t.Fatalf("Expected no error, got %q instead\n", err)
+			t.Fatalf("Expected no error, got %q.", err)
 		}
 
 		viewOut := strings.Split(out.String(), "\n")
 
 		if !strings.Contains(viewOut[0], task) {
-			t.Fatalf("Expected task %q, got %q instead\n", task, viewOut[0])
+			t.Fatalf("Expected task %q, got %q.", task, viewOut[0])
 		}
 
 		if !strings.Contains(viewOut[1], today) {
-			t.Fatalf("Expected creation day/month %q, got %q instead\n", today, viewOut[1])
+			t.Fatalf("Expected creation day/month %q, got %q.", today, viewOut[1])
 		}
 
 		if !strings.Contains(viewOut[2], "No") {
-			t.Fatalf("Expected completed status %q, got %q instead\n", "No", viewOut[2])
+			t.Fatalf("Expected completed status %q, got %q.", "No", viewOut[2])
 		}
 	})
 
@@ -127,13 +127,13 @@ func TestIntegration(t *testing.T) {
 		var out bytes.Buffer
 
 		if err := completeAction(&out, apiRoot, taskId); err != nil {
-			t.Fatalf("Expected no error, got %q instead\n", err)
+			t.Fatalf("Expected no error, got %q.", err)
 		}
 
 		expOut := fmt.Sprintf("Item number %s marked as completed.\n", taskId)
 
 		if expOut != out.String() {
-			t.Fatalf("Expected output %q, got %q instead\n", expOut, out.String())
+			t.Fatalf("Expected output %q, got %q.", expOut, out.String())
 		}
 	})
 
@@ -141,7 +141,7 @@ func TestIntegration(t *testing.T) {
 		var out bytes.Buffer
 
 		if err := listAction(&out, apiRoot); err != nil {
-			t.Fatalf("Expected no error, got %q instead\n", err)
+			t.Fatalf("Expected no error, got %q.", err)
 		}
 
 		outList := ""
@@ -160,7 +160,7 @@ func TestIntegration(t *testing.T) {
 		taskCompleteStatus := strings.Fields(outList)[0]
 
 		if taskCompleteStatus != "X" {
-			t.Errorf("Expected status %q, got %q instead\n", "-", taskCompleteStatus)
+			t.Errorf("Expected status %q, got %q.", "-", taskCompleteStatus)
 		}
 
 		taskId = strings.Fields(outList)[1]
@@ -170,13 +170,13 @@ func TestIntegration(t *testing.T) {
 		var out bytes.Buffer
 
 		if err := delAction(&out, apiRoot, taskId); err != nil {
-			t.Errorf("Expected no error, got %q instead\n", err)
+			t.Errorf("Expected no error, got %q.", err)
 		}
 
 		expOut := fmt.Sprintf("Item number %s deleted.\n", taskId)
 
 		if expOut != out.String() {
-			t.Fatalf("Expected output %q, got %q instead\n", expOut, out.String())
+			t.Fatalf("Expected output %q, got %q.", expOut, out.String())
 		}
 	})
 
@@ -184,7 +184,7 @@ func TestIntegration(t *testing.T) {
 		var out bytes.Buffer
 
 		if err := listAction(&out, apiRoot); err != nil {
-			t.Fatalf("Expected no error, got %q instead\n", err)
+			t.Fatalf("Expected no error, got %q.", err)
 		}
 
 		scanner := bufio.NewScanner(&out)

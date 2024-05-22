@@ -13,18 +13,18 @@ var testResp = map[string]struct {
 		Status: http.StatusOK,
 		Body: `{
 "results": [
-{
-"Task": "Task 1",
-"Done": false,
-"CreatedAt": "2019-10-28T08:23:38.310097076-04:00",
-"CompletedAt": "0001-01-01T00:00:00Z"
-},
-{
-"Task": "Task 2",
-"Done": false,
-"CreatedAt": "2019-10-28T08:23:38.323447798-04:00",
-"CompletedAt": "0001-01-01T00:00:00Z"
-}
+	{
+		"Task": "Task 1",
+		"Done": false,
+		"CreatedAt": "2019-10-28T08:23:38.310097076-04:00",
+		"CompletedAt": "0001-01-01T00:00:00Z"
+	},
+	{
+		"Task": "Task 2",
+		"Done": false,
+		"CreatedAt": "2019-10-28T08:23:38.323447798-04:00",
+		"CompletedAt": "0001-01-01T00:00:00Z"
+	}
 ],
 "date": 1572265440,
 "total_results": 2
@@ -34,12 +34,12 @@ var testResp = map[string]struct {
 		Status: http.StatusOK,
 		Body: `{
 "results": [
-{
-"Task": "Task 1",
-"Done": false,
-"CreatedAt": "2019-10-28T08:23:38.310097076-04:00",
-"CompletedAt": "0001-01-01T00:00:00Z"
-}
+	{
+		"Task": "Task 1",
+		"Done": false,
+		"CreatedAt": "2019-10-28T08:23:38.310097076-04:00",
+		"CompletedAt": "0001-01-01T00:00:00Z"
+	}
 ],
 "date": 1572265440,
 "total_results": 1
